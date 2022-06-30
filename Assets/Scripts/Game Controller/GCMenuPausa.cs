@@ -45,7 +45,7 @@ public class GCMenuPausa : MonoBehaviour
 
     private void ReanudarJuegoConTecla()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Start"))
         {
             puedoReanudar = !puedoReanudar;
 

@@ -22,7 +22,7 @@ public class SpawnMisllPJ : MonoBehaviour
     }
     private void SpawnearMisil()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButton("Fire3") || Input.GetKey(KeyCode.Space) || Input.GetButton("L2"))
         {
             if (tiempoActual > tiempoEntreDisparos)
             {
