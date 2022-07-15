@@ -9,6 +9,8 @@ public class Movimiento : MonoBehaviour
 
     [Space]
 
+    [Header("Vel del DASH")]
+    [SerializeField] private float velDash;
     /*[Header("Teclas de movimiento")]
     [SerializeField] private KeyCode teclaIzq;
     [SerializeField] private KeyCode teclaDer;
@@ -30,10 +32,11 @@ public class Movimiento : MonoBehaviour
 
     private float inputHorizontal;
     private float inputVertical;
+    private float inputR2;
     private void FixedUpdate()
     {
         Mov();
-        
+        MovDash();
     }
 
     private void Mov()
@@ -137,5 +140,13 @@ public class Movimiento : MonoBehaviour
             rb2D.position = new Vector2(transform.position.x, limiteAbajo);
             //rb2D.velocity = Vector2.zero;
         }
+    }
+
+    private void MovDash()
+    {
+        /*inputR2 = Input.GetAxis("R2");
+        Debug.Log("inputR2: " + inputR2);
+        rb2D.GetPointVelocity(transform.position * velDash * Time.fixedDeltaTime * inputR2);
+        //rb2D.AddForce(Vector2.left * inputR2 * vel * Time.fixedDeltaTime, ForceMode2D.Impulse);*/
     }
 }

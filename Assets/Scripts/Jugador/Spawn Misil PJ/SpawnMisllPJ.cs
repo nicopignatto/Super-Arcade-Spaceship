@@ -10,10 +10,15 @@ public class SpawnMisllPJ : MonoBehaviour
 
     [Header("Linkeos")]
     [SerializeField] private GameObject misilPJ;
+
+    private float inputL2;
+
+    private bool puedoSpawnear;
     
 
     private void Start()
     {
+        puedoSpawnear = false;
         tiempoActual = tiempoEntreDisparos + 1;
     }
     private void Update()
@@ -22,8 +27,9 @@ public class SpawnMisllPJ : MonoBehaviour
     }
     private void SpawnearMisil()
     {
-        if (Input.GetButton("Fire3") || Input.GetKey(KeyCode.Space) || Input.GetButton("L2"))
+        if (Input.GetButton("Fire3") || Input.GetKey(KeyCode.Space))
         {
+
             if (tiempoActual > tiempoEntreDisparos)
             {
                 LogicReprodDisparosPJ.ReproducirSonidoDisparoPJ = true;
@@ -34,4 +40,5 @@ public class SpawnMisllPJ : MonoBehaviour
         }
         tiempoActual += Time.deltaTime;
     }
+
 }
